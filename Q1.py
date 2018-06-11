@@ -1,47 +1,57 @@
-# File: one.py
+# File: q1.py
 # Author: Joshua Lam
+# Info: Contains the UFList class which stores items and can return
+# 	the unique elements and also the frequency of elements.
 
 # Unique and Frequency List
 class UFList:
 
 	# Initialize a class instance
-	def __init__(self):
-		self.items = []
+	def __init__(self, items=None):
+		if items:
+			self.items = items
+		else:
+			self.items = []
+		self.init_frequency(items)
+		self.init_unique()
+	
+	# Function to initialize the unique items of a list
+	def init_unique(self):
 		self.unique = set()
+		if not self.frequency:
+			return
+		for item in self.frequency:
+			if self.frequency[item]==1:
+				self.unique.add(item)
+	
+	# Function to initialize frequency of items in a list
+	def init_frequency(self, items):
 		self.frequency = {}
-
-	# Initialize a class instance with a list
-	def __init__(self, items):
-		self.items = items
-		self.unique = set(items)
-		self.frequency = init_frequency(items)
+		if not items:
+			 return
+		for item in items:
+			if item in self.frequency:
+				self.frequency[item] += 1
+			else:
+				self.frequency[item] = 1
 	
 	# Insert item into list and update unique and frequency
 	def insert(self, position, item):
 		self.items.insert(position, item)
-		update_unique(item)
-		update_frequency(item)
+		self.update_unique(item)
+		self.update_frequency(item)
 
 	# Append item to end of list and update unique and frequency
-	def insert(self, item):
+	def append(self, item):
 		self.items.append(item)
-		update_unique(item)
-		update_frequency(item)
-
-	# Function to initialize frequency of items in a list
-	def init_frequency(items):
-		frequency = {}
-		for item in items:
-			if item in frequency:
-				frequency[item] += 1
-			else:
-				frequency[item] = 1
+		self.update_unique(item)
+		self.update_frequency(item)
 
 	# Function to update the unique items
 	def update_unique(self, item):
-		if item in self.unique:
+		if item in self.unique and item in self.frequency:
 			self.unique.remove(item)
-		else:
+		elif item not in self.frequency:
 			self.unique.add(item)
 
 	# Function to update the frequency of items
