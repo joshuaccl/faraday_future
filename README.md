@@ -16,6 +16,10 @@ This will pull up simple command line interface prompting you to enter in which 
 
 ## q6.py
 
+The simple GUI requires the appjar library. Enter the following in a terminal to install the necessary library:
+
+`sudo pip install appjar`
+
 To run the simple GUI which displays information on the California cities included in the ca.json file enter:
 
 `python q6.py`
