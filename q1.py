@@ -49,7 +49,7 @@ class UFList:
 
 	# Function to update the unique items
 	def update_unique(self, item):
-		if item in self.unique and item in self.frequency:
+		if item in self.unique:
 			self.unique.remove(item)
 		elif item not in self.frequency:
 			self.unique.add(item)
