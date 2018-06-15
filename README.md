@@ -23,3 +23,7 @@ The simple GUI requires the appjar library. Enter the following in a terminal to
 To run the simple GUI which displays information on the California cities included in the ca.json file enter:
 
 `python q6.py`
+
+## q7.txt and q7.jpg
+
+Image containing the answer to question 7. The justification of the solution is contained in q7.txt.
